@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"target": "es2015",
+		"module": "es2015",
+		"strict": false,
+		"strictNullChecks": false,
+		"esModuleInterop": false,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"include": ["ts/*", "ts/**/*"],
+	"$schema": "https://json.schemastore.org/tsconfig"
+}
