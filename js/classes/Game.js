@@ -99,24 +99,19 @@ class Game {
 
 		if (ballHitsTop || ballHitsPaddle) this.ball.dy *= -1;
 
-		let i = -1;
-
-		for (let j = 0; j < this.bricks.length; j++) {
+		for (const brick of this.bricks) {
 			const ballHitsBrick =
-				this.ball.y - this.ball.r < this.bricks[j].y &&
-				this.ball.x + this.ball.r > this.bricks[j].x &&
-				this.ball.x - this.ball.r < this.bricks[j].x + this.bricks[j].w;
+				this.ball.y - this.ball.r < brick.y &&
+				this.ball.x + this.ball.r > brick.x &&
+				this.ball.x - this.ball.r < brick.x + brick.w;
 
 			if (ballHitsBrick) {
-				i = j;
+				this.bricks.splice(this.bricks.indexOf(brick), 1);
+
+				this.ball.dy *= -1;
+
+				break;
 			}
-		}
-		// this.bricks.forEach(brick => {});
-
-		if (i !== -1) {
-			const brick = this.bricks.splice(i, 1)[0];
-
-			this.ball.dy *= -1;
 		}
 
 		return ballHitsBottom;
