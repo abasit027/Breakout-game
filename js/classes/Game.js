@@ -30,7 +30,7 @@ class Game {
 		this.width = this.canvas.width;
 
 		this.ball = new Ball(30, this.width / 2, this.height - 80.5, -9, -7, '#dc143c');
-		this.paddle = new Paddle(160, 30, this.width / 2 - 60, this.height - 50, 0, 12, '#41d44d');
+		this.paddle = new Paddle(160, 10, this.width / 2 - 60, this.height - 50, 0, 12, '#41d44d');
 
 		this.play();
 
